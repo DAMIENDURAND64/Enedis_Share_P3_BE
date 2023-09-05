@@ -33,7 +33,7 @@ app.use(
 
 app.get("/", (req, res) => {
   res.send(
-    "Bienvenue sur l'API Enedis Share ! Commencez votre recherche en ajoutant /api/v1 à l'url de base, puis ajoutez-y le nom de la ressource recherchée"
+    "Bienvenue sur l'API Enedis Share ! Commencez votre recherche en ajoutant /api/v1 à l'url de base, puis ajoutez-y le nom de la ressource recherchée cecv"
   );
 });
 
