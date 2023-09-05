@@ -7,6 +7,8 @@ import { sign } from "jsonwebtoken";
 import getSecretKey from "../../../utils/auth";
 
 const signIn: IAuthController["signIn"] = async (req, res, next) => {
+  const allUsers = await prisma.user.findMany();
+  console.log(allUsers);
   const { email, password } = req.body;
   try {
     const logUser = await prisma.user.findUnique({
