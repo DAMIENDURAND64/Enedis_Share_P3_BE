@@ -4,7 +4,6 @@ import api from "./api";
 import { v2 as cloudinary } from "cloudinary";
 
 import dotenv from "dotenv";
-import corsOptions from "./config/corsOptions";
 
 dotenv.config();
 
@@ -23,7 +22,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send(
