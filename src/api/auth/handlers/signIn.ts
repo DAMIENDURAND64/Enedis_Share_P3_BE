@@ -8,7 +8,7 @@ import getSecretKey from "../../../utils/auth";
 
 const signIn: IAuthController["signIn"] = async (req, res, next) => {
   const allUsers = await prisma.user.findMany();
-  console.log(allUsers);
+  console.log(allUsers, "allUsers");
   const { email, password } = req.body;
   try {
     const logUser = await prisma.user.findUnique({
