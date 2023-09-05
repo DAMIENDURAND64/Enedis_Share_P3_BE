@@ -4,6 +4,7 @@ import api from "./api";
 import { v2 as cloudinary } from "cloudinary";
 
 import dotenv from "dotenv";
+import corsOptions from "./config/corsOptions";
 
 dotenv.config();
 
@@ -22,18 +23,11 @@ const app = express();
 
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-    methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.send(
-    "Bienvenue sur l'API Enedis Share ! Commencez votre recherche en ajoutant /api/v1 à l'url de base, puis ajoutez-y le nom de la ressource recherchée cecv"
+    "Bienvenue sur l'API Enedis Share ! Commencez votre recherche en ajoutant /api/v1 à l'url de base, puis ajoutez-y le nom de la ressource recherchée"
   );
 });
 
