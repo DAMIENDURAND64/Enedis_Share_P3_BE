@@ -24,14 +24,10 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || origin === "http://localhost:3000") {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: "http://localhost:3000",
     credentials: true,
+    methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
